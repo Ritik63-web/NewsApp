@@ -1,4 +1,5 @@
 import React from 'react'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 // import Parent from './components/Parent'
 // import Child from './components/Child'
 // import Parent2 from './components/ChildToParent/Parent2'
@@ -16,6 +17,7 @@ const App = () => {
       {/* <Todolist /> */}
       {/* <NewsHome /> */}
       <Newsapp />
+      <SpeedInsights />
       {/* <AccountHome /> */}
     </>
   )
