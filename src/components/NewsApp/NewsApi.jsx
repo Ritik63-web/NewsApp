@@ -10,7 +10,7 @@ const NewsApi = () => {
         const data = await res.json()
         setNews(data)
       } catch (err) {
-        setError(err)
+        setError(err.message)
       }
     }
     getNews()
