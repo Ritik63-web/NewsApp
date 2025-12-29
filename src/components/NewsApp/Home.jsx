@@ -9,7 +9,7 @@ const Home = () => {
     if (category) {
       setInput(category);
     } else {
-      setInput("all");
+      setInput("India");
     }
   }, [category]);
 
