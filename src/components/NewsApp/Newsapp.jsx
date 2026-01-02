@@ -8,7 +8,6 @@ const Newsapp = () => {
   return (
     <>
       <Newsbar />
-      {/* <Home /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/:category" element={<Home />} />

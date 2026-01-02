@@ -1,4 +1,4 @@
-import React, {useRef, useContext} from 'react'
+import React, {useRef, useContext, useEffect} from 'react'
 import {NewsContext} from '../../context/NewsAppContext'
 import {Link} from 'react-router-dom'
 
@@ -13,9 +13,16 @@ const Newsbar = () => {
   function changeLanguage(e){
     setLanguage(e.target.value)
   }
+  const date = new Date()
+  const time12 = date.toLocaleTimeString("en-IN", {
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: true
+  });
+
   return (
     <>
-    <div className='d-flex justify-content-around align-items-center p-4'>
+    <div className='d-flex justify-content-around align-items-center p-4 gap-2'>
       <div className='input-group'>
       <input type="text" ref={inputRef} placeholder="Search here.." className='form-control'/>
       <button type='submit' onClick={getInput} className='btn btn-primary'>Search</button>
@@ -24,6 +31,7 @@ const Newsbar = () => {
         <option value="en">English</option>
         <option value="hi">Hindi</option>
       </select>
+      <span>{date.toLocaleDateString()}</span>
     </div>
     <div className='d-flex justify-content-around align-items-center'>
       <ul className='d-flex justify-content-around align-items-center list-unstyled nav'>

@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import { NewsContext } from "../../context/NewsAppContext";
+import { useParams } from "react-router-dom";
 
 const Home = () => {
   const { news, error, setInput } = useContext(NewsContext);
@@ -26,16 +26,22 @@ const Home = () => {
                 <img
                   src={item.urlToImage || "/no-image.png"}
                   className="card-img-top"
-                  alt={item.title}
+                  alt='No Pic'
                   style={{ height: "200px", objectFit: "cover" }}
                 />
 
                 <div className="card-body d-flex flex-column">
                   <h5 className="card-title">{item.title}</h5>
 
-                  <p className="card-text text-muted small">
-                    {item.author || "Unknown Author"}
-                  </p>
+                  <div>
+                    <span className="card-text text-muted small float-start">
+                      {item.author || "Unknown Author"}
+                    </span>
+                    <span className="card-text text-muted small float-end">
+                      {new Date(item.publishedAt).toLocaleDateString("en-GB") ||
+                        "Date"}
+                    </span>
+                  </div>
 
                   <p className="card-text">
                     {item.description
