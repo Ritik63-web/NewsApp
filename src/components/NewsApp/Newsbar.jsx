@@ -1,4 +1,4 @@
-import React, {useRef, useContext, useEffect} from 'react'
+import React, {useRef, useContext} from 'react'
 import {NewsContext} from '../../context/NewsAppContext'
 import {Link} from 'react-router-dom'
 
@@ -14,11 +14,6 @@ const Newsbar = () => {
     setLanguage(e.target.value)
   }
   const date = new Date()
-  const time12 = date.toLocaleTimeString("en-IN", {
-    hour: "2-digit",
-    minute: "2-digit",
-    hour12: true
-  });
 
   return (
     <>
@@ -64,3 +59,5 @@ const Newsbar = () => {
     </>
   )
 }
+
+export default Newsbar;
