@@ -64,5 +64,3 @@ const Newsbar = () => {
     </>
   )
 }
-
-export default Newsbar
