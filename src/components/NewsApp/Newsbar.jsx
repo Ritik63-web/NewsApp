@@ -13,6 +13,9 @@ const Newsbar = () => {
   function changeLanguage(e){
     setLanguage(e.target.value)
   }
+  // function changeCountry(e){
+  //   setCountry(e.target.value)
+  // }
   const date = new Date()
 
   return (
@@ -26,6 +29,10 @@ const Newsbar = () => {
         <option value="en">English</option>
         <option value="hi">Hindi</option>
       </select>
+      {/* <select name="country" value={country} onChange={changeCountry} className='form-select' style={{width:'120px'}}>
+        <option value="in">India</option>
+        <option value="us">US</option>
+      </select> */}
       <span>{date.toLocaleDateString()}</span>
     </div>
     <div className='d-flex justify-content-around align-items-center'>
