@@ -43,7 +43,7 @@ const Newsbar = () => {
           <Link to='/sports' className='nav-link'>Sports</Link>
         </li>
         <li className='nav-item'>
-          <Link to='/cricket' className='nav-link'>Cricket</Link>
+          <Link to='/education' className='nav-link'>Education</Link>
         </li>
         <li className='nav-item'>
           <Link to='/technology' className='nav-link'>Technology</Link>
@@ -53,6 +53,9 @@ const Newsbar = () => {
         </li>
         <li className='nav-item'>
           <Link to='/market' className='nav-link'>Markets</Link>
+        </li>
+        <li className='nav-item'>
+          <Link to='/health' className='nav-link'>Health</Link>
         </li>
       </ul>
     </div>
