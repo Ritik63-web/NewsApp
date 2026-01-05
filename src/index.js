@@ -1,22 +1,22 @@
-import React from "react";
+import React, {StrictMode} from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 // import { WeatherProvider } from "./context/WeatherContext";
-import { NewsProvider } from "./context/NewsAppContext";
-import { SpeedInsights } from "@vercel/speed-insights/react"
+// import { NewsProvider } from "./context/NewsAppContext";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      {/* <WeatherProvider> */}
-        <NewsProvider>
-          <App />
-          <SpeedInsights />
-        </NewsProvider>
-      {/* </WeatherProvider> */}
-    </BrowserRouter>
-  </React.StrictMode>
+  <StrictMode>
+  <BrowserRouter>
+    {/* <WeatherProvider> */}
+    {/* <NewsProvider> */}
+    <App />
+    <SpeedInsights />
+    {/* </NewsProvider> */}
+    {/* </WeatherProvider> */}
+  </BrowserRouter>
+  </StrictMode>
 );

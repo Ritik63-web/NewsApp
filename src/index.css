@@ -11,14 +11,34 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-.card:hover {
-  transform: translateY(-5px);
-  transition: 0.3s ease;
+.parent{
+  width: 300px;
+  height: 300px;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 20px; 
+  margin: 20px;
+  border: 1px solid;
 }
 
-.card-title {
-  font-size: 1rem;
-  font-weight: 600;
+.parent .top img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.top button{
+  width: 90px;
+  height: 40px;
+  font-size:15px
+}
+.bottom button{
+  width: 110px;
+  height: 40px;
+}
+.center .days{
+  word-spacing: -3px;
+  color: rgb(129, 125, 125);
+  font-size: 15px;
 }
 
