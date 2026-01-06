@@ -31,7 +31,7 @@ const InputDetails = () => {
         JSON.stringify([...oldData, formData])
       );
 
-      navigate("/dis");
+      navigate("/user/details");
     } catch (err) {
       setError(err.message);
     }

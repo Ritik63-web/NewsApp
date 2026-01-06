@@ -9,7 +9,6 @@ const Todolist = () => {
 
   const inputRef = useRef(null);
 
-  // ADD TASK
   function addTask() {
     const value = inputRef.current.value;
     if (value.trim() === "") return;
@@ -23,18 +22,15 @@ const Todolist = () => {
     inputRef.current.value = "";
   }
 
-  // DELETE TASK
   function deleteTask(index) {
     const updatedTasks = task.filter((_, i) => i !== index);
     setTask(updatedTasks);
   }
 
-  // EDIT BUTTON CLICK
   function updateTask(index) {
     setEditIndex(index);
   }
 
-  // SAVE UPDATED TASK
   function saveTask(index, newText) {
     const updatedTasks = task.map((item, i) =>
       i === index ? { ...item, text: newText } : item
@@ -43,7 +39,6 @@ const Todolist = () => {
     setEditIndex(null);
   }
 
-  // LOCAL STORAGE
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(task));
   }, [task]);

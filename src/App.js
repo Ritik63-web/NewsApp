@@ -23,7 +23,7 @@ const App = () => {
       <DetailsProvider>
         <Routes>
           <Route path='/' element={<InputDetails />} />
-          <Route path="/dis" element={<DisplayDetails />} />
+          <Route path="/user/details" element={<DisplayDetails />} />
         </Routes>
       </DetailsProvider>
       <SpeedInsights />
