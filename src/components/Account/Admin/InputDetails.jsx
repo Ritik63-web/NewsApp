@@ -1,11 +1,11 @@
 import React, { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { DetailContext } from "../../../context/DetailsContext";
 
 const InputDetails = () => {
   const navigate = useNavigate();
   const { setDetails } = useContext(DetailContext);
-  const [error, setError] = useState(null)
+  const [error, setError] = useState(null);
   const [formData, setFormData] = useState({
     company: "",
     des: "",
@@ -23,13 +23,10 @@ const InputDetails = () => {
     try {
       if (!formData.company.trim()) return;
 
-      setDetails(prev => [...prev, formData]);
+      setDetails((prev) => [...prev, formData]);
 
       const oldData = JSON.parse(localStorage.getItem("details")) || [];
-      localStorage.setItem(
-        "details",
-        JSON.stringify([...oldData, formData])
-      );
+      localStorage.setItem("details", JSON.stringify([...oldData, formData]));
 
       navigate("/user/details");
     } catch (err) {
@@ -37,50 +34,55 @@ const InputDetails = () => {
     }
   }
 
-
   return (
     <>
-      <div className="container vh-100 d-flex justify-content-center align-items-center">
-        <div className="row justify-content-center w-75">
-          <h2 className="text-center bg-secondary rounded-2 text-light">
-            Fill Details
-          </h2>
-          <div className="col-md-5 mb-3">
-            <input
-              name="company"
-              placeholder="Company"
-              onChange={handleChange}
-              className="form-control"
-            />
+      <div className="vh-100">
+        <div className="d-flex justify-content-center gap-5 float-end">
+          <Link to='/user/signup' className="btn btn-secondary">Sign up</Link>
+          <Link to='/user/login' className="btn btn-secondary">Login</Link>
+        </div>
+        <div className="container h-100 d-flex justify-content-center align-items-center">
+          <div className="row justify-content-center w-75">
+            <h2 className="text-center bg-secondary rounded-2 text-light">
+              Fill Details
+            </h2>
+            <div className="col-md-5 mb-3">
+              <input
+                name="company"
+                placeholder="Company"
+                onChange={handleChange}
+                className="form-control"
+              />
+            </div>
+            <div className="col-md-5 mb-3">
+              <input
+                name="des"
+                placeholder="Designation"
+                onChange={handleChange}
+                className="form-control"
+              />
+            </div>
+            <div className="col-md-5 mb-3">
+              <input
+                name="days"
+                placeholder="Days left"
+                onChange={handleChange}
+                className="form-control"
+              />
+            </div>
+            <div className="col-md-5 mb-3">
+              <input
+                name="img"
+                placeholder="Image Link"
+                onChange={handleChange}
+                className="form-control"
+              />
+            </div>
+            <p>{error}</p>
+            <button className="btn btn-secondary col-9" onClick={handleSubmit}>
+              Submit
+            </button>
           </div>
-          <div className="col-md-5 mb-3">
-            <input
-              name="des"
-              placeholder="Designation"
-              onChange={handleChange}
-              className="form-control"
-            />
-          </div>
-          <div className="col-md-5 mb-3">
-            <input
-              name="days"
-              placeholder="Days left"
-              onChange={handleChange}
-              className="form-control"
-            />
-          </div>
-          <div className="col-md-5 mb-3">
-            <input
-              name="img"
-              placeholder="Image Link"
-              onChange={handleChange}
-              className="form-control"
-            />
-          </div>
-          <p>{error}</p>
-          <button className="btn btn-secondary col-9" onClick={handleSubmit}>
-            Submit
-          </button>
         </div>
       </div>
     </>
